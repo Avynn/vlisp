@@ -1,0 +1,22 @@
+.Board {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-color: green;
+}
+
+
+.container {
+  position: absolute;
+  top: 30%;
+  left: 10px;
+  text-align: center;
+}
+
+.container h2 {
+  font-size: 5rem;
+}
+
+.container a {
+  font-size: 1.4rem;
+}

@@ -1,0 +1,69 @@
+.SymbolSpawner {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  background-color: black;
+}
+
+.ConnectorRow {
+  position: relative;
+  height: 20px;
+  padding-top: 2px;
+  top: 5px;
+}
+
+.outputConnector {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: coral;
+}
+
+.inputConnector {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: aqua;
+}
+
+.connector {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+  position: absolute;
+
+}
+
+.startLine {
+  border-top: 2px solid #ada;
+  border-bottom: 2px solid #ada;
+	width: 100%;
+	height: 0px;
+  width: 50%;
+  height: 0px;
+  align-self: flex-start;
+  position: relative;
+
+}
+
+.endLine {
+  border-top: 2px solid #ada;
+  border-bottom: 2px solid #ada;
+	width: 100%;
+	height: 0px;
+  width: 50%;
+  height: 0px;
+  align-self: flex-end;
+  position: relative;
+
+}
+
+.centerLine {
+  border-top: 2px solid #ada;
+  border-bottom: 2px solid #ada;
+	width: 100%;
+	height: 0px;
+  border-left: 4px solid #ada;
+  width: 0px;
+  height: 50%;
+}
