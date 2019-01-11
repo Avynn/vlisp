@@ -38,10 +38,14 @@ export default class Board extends Component {
       NodeFrames: [],
       connectors: []
     };
-
-    this.props.renderer.on('saveGraph', this.saveBoard.bind(this));
     
     this.addNodeFrame.bind(this);
+    this.getType.bind(this);
+  }
+
+  componentDidMount(){
+    this.props.renderer.on('saveGraph', this.saveBoard.bind(this));
+    this.props.renderer.on('loadGraph', this.loadBoard.bind(this));
   }
   
   onDragOver(event){
@@ -69,6 +73,7 @@ export default class Board extends Component {
     */
 
     let newNodeFrame = {NodeFrameName: this.state.NodeFrames.length.toString(),
+                  NodeFrameTypeName: type.name,
                   NodeFrameType: type,
                   coords: coords}
 
@@ -130,9 +135,25 @@ export default class Board extends Component {
   }
 
   saveBoard(){
-    //Open file here
     this.props.renderer.send('sendMainGraph', this.state);
   }
+
+  loadBoard(event, graph){
+
+    graph.NodeFrames.forEach((nodeFrame) => {
+    })
+
+    //this.getType();
+
+    console.log(SymbolSpawner);
+
+    //this.setState(graph);
+  }
+
+  getType(){
+    console.log(this.props);
+  }
+
   
   render(){
     /*
@@ -145,7 +166,7 @@ export default class Board extends Component {
     */
 
     const { NodeFrames, connectors } = this.state;
-    
+
     return (
       <div className={styles.Board}
            onDragOver={ (e) => this.onDragOver(e)}>

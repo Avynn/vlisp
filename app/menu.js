@@ -1,4 +1,4 @@
-import { app, Menu, shell, BrowserWindow, ipcMain } from 'electron';
+import { app, Menu, shell, BrowserWindow, ipcMain, dialog } from 'electron';
 
 const fs = require('fs');
 
@@ -9,10 +9,10 @@ export default class MenuBuilder {
     this.mainWindow = mainWindow;
     this.ipc = ipcMain;
 
-    this.ipc.on('sendMainGraph', this.getGraph.bind(this));
+    this.ipc.on('sendMainGraph', this.storeGraph.bind(this));
   }
 
-  getGraph(event, graph) {
+  storeGraph(event, graph) {
     console.log(graph);
 
     fs.writeFile('savefile.txt', JSON.stringify(graph), (err, buff)=> {
@@ -20,6 +20,18 @@ export default class MenuBuilder {
       console.log("ping!");
     })
   }
+
+  loadGraph(path) {
+    let str = fs.readFile(path, 'utf8', (err, data) => {
+      if(err) throw err;
+
+      let graph = JSON.parse(data);
+
+      this.mainWindow.webContents.send('loadGraph', graph);
+    });
+
+    return str;
+  } 
 
   buildMenu() {
     if (
@@ -207,7 +219,12 @@ export default class MenuBuilder {
           },
           {
             label: '&Open',
-            accelerator: 'Ctrl+O'
+            accelerator: 'Ctrl+O',
+            click: () => {
+              dialog.showOpenDialog({properties: ['openFile']}, (filePaths) => {
+                this.loadGraph(filePaths[0]);
+              });
+            }
           },
           {
             label: '&Close',

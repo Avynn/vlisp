@@ -151,6 +151,8 @@ class VariableNode extends React.Component {
         name: "",
         val: ""
       }
+
+      this.name = 'Variable_Node'
      
     }
     
@@ -210,6 +212,7 @@ class ConstNode extends React.Component {
         name: ""
       }
      
+      this.name = 'Const_Nodes'
     }
     
     onInputChange(stateName, event){
@@ -235,6 +238,8 @@ class ConstNode extends React.Component {
 class BinopNode extends React.Component {
   constructor(props){
     super(props);
+
+    this.name = 'BinopNode'
   }
 
   render(){
@@ -259,6 +264,8 @@ class BinopNode extends React.Component {
 class AddNode extends React.Component{
   constructor(props){
     super(props);
+
+    this.name = 'Add_Node'
   }
   
   render(){
@@ -271,6 +278,8 @@ class AddNode extends React.Component{
 class SubNode extends React.Component{
   constructor(props){
     super(props);
+
+    this.name = 'Sub_Node'
   }
   
   render(){
@@ -283,6 +292,8 @@ class SubNode extends React.Component{
 class MulNode extends React.Component{
   constructor(props){
     super(props);
+
+    this.name = 'Mul_Node'
   }
   
   render(){
@@ -295,6 +306,8 @@ class MulNode extends React.Component{
 class IntDivNode extends React.Component{
   constructor(props){
     super(props);
+
+    this.name = 'Int_Div_Node'
   }
   
   render(){
@@ -307,6 +320,8 @@ class IntDivNode extends React.Component{
 class ModuloNode extends React.Component{
   constructor(props){
     super(props);
+
+    this.name = 'Modulo_Node'
   }
   
   render(){

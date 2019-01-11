@@ -1,1 +1,1 @@
-{"NodeFrames":[{"NodeFrameName":"0","coords":{"left":305,"top":134}},{"NodeFrameName":"1","coords":{"left":670,"top":235}}],"connectors":[{"inputID":"input_1_0","outputID":"output_0_0"}]}
+{"NodeFrames":[{"NodeFrameName":"0","NodeFrameTypeName":"AddNode","coords":{"left":362,"top":165}},{"NodeFrameName":"1","NodeFrameTypeName":"SubNode","coords":{"left":619,"top":289}}],"connectors":[{"inputID":"input_1_0","outputID":"output_0_0"}]}
